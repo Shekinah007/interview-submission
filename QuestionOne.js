@@ -19,13 +19,14 @@ const bracketChecker = (str) => {
         }
     }
 
-    if (openingBrackets == closingBrackets || (!openingBrackets && !closingBrackets)) {
+    if (openingBrackets == closingBrackets) {
         return 1
     } else {
         return 0;
     };
 }
 
-console.log(bracketChecker(testString))
+// console.log(bracketChecker(testString))
 console.log(bracketChecker("(coder)(byte))"))
 console.log(bracketChecker("(c(oder)) b(yte)"))
+console.log(bracketChecker("a string with no brackets"))
