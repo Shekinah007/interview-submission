@@ -6,31 +6,47 @@ h2,
 input {
   margin: 0;
   border: none;
-  /* padding: 0; */
   box-sizing: border-box;
 }
 
 .app {
-  font-family: monospace;
-  font-size: 18px;
-  text-align: center;
-  font-weight: bold;
-  color: black;
+  background-color: whitesmoke;
   height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.card {
+  border-radius: 15px;
+  font-family: monospace;
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+  color: black;
+  border-top: 50px solid black;
+  width: 600px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 40px;
   padding: 10px;
-  background-color: whitesmoke;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .header {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.header p {
+  max-width: 500px;
 }
 
 .otp {
@@ -40,8 +56,8 @@ input {
 
 input {
   padding: 10px;
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 60px;
   border-radius: 5px;
   border: 2px solid grey;
   outline: none;
@@ -63,23 +79,70 @@ button {
   color: white;
   font-weight: bold;
   background-color: rgb(38, 38, 235);
-  padding: 10px;
-  width: 200px;
-  border-radius: 20px;
+  padding: 15px;
+  width: 300px;
+  border-radius: 24px;
+  font-size: 18px;
 }
 
 button:hover {
   cursor: pointer;
 }
 
-.top-bar {
+/* .top-bar {
   height: 50px;
-  width: 100vw;
+  width: 500px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
   background-color: black;
-  position: fixed;
-  top: 0;
-}
+} */
 
 .gray {
   color: rgb(94, 93, 93)
+}
+
+
+
+@media only screen and (max-width: 321px) {
+  .app {
+    min-height: 100vh;
+    height: initial;
+    gap: 10px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .otp {
+    gap: 5px;
+  }
+
+  .top-bar {
+    height: 35px;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .app {
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 100vw;
+  }
+
+  .card {
+    min-height: 100vh;
+    gap: 20px;
+    width: 100vw;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  .otp {
+    gap: 5px;
+  }
+
 }
