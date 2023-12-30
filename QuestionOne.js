@@ -13,6 +13,9 @@ const bracketChecker = (str) => {
         } else if (str[i] === ")") {
             lastOpeningBracket = true  //stops the counting of any addional open brackets
             closingBrackets++;
+            if (openingBrackets == closingBrackets) {
+                lastOpenBracket = false;
+            }
         }
     }
 
