@@ -19,7 +19,7 @@ const bracketChecker = (str) => {
         }
     }
 
-    if (openingBrackets == closingBrackets) {
+    if (openingBrackets == closingBrackets || (!openingBrackets && !closingBrackets)) {
         return 1
     } else {
         return 0;
