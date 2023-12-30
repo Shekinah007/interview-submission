@@ -12,6 +12,8 @@ function App() {
   const [digit5, setDigit5] = useState("");
   const [digit6, setDigit6] = useState("");
 
+  const inputArray = [{ digit1, setDigit1 }, { digit2, setDigit2 }, { digit3, setDigit3 }, { digit4, setDigit4 }, { digit5, setDigit5 }, { digit6, setDigit6 }]
+
   const [otp, setOtp] = useState("");
 
   const submitOtp = () => {
@@ -19,8 +21,7 @@ function App() {
     if (digit1 && digit2 && digit3 && digit4 && digit5 && digit6) {
 
       setOtp(digit1 + digit2 + digit3 + digit4 + digit5 + digit6 + "")
-
-      console.log('submitOtp: ', otp)
+      // console.log('submitOtp: ', otp)
       alert("OTP submitted successfully")
     } else {
       alert("Fill in all boxes")
@@ -46,7 +47,16 @@ function App() {
         </div>
 
         <div className="otp">
-          <input type="text" value={digit1} maxLength={1} onChange={(e) => {
+
+          {
+            inputArray.map(input => {
+              return <input type="text" value={input.digit1} maxLength={1} onChange={(e) => {
+                checkNumber(e.target.value, set)
+              }} />
+            })
+          }
+
+          {/* <input type="text" value={digit1} maxLength={1} onChange={(e) => {
             checkNumber(e.target.value, setDigit1)
           }} />
           <input type="text" value={digit2} maxLength={1} onChange={(e) => {
@@ -64,7 +74,7 @@ function App() {
           <input type="text" value={digit6} maxLength={1} onChange={(e) => {
             checkNumber(e.target.value, setDigit6)
           }
-          } />
+          } /> */}
         </div>
 
         <p><span className="gray">A SMS has been sent to</span> 321-264-5231</p>
