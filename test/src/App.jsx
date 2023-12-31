@@ -7,8 +7,9 @@ function App() {
   const [inputArray, setInputArray] = useState(["", "", "", "", "", ""])
 
   const submitOtp = () => {
+    console.log(inputArray)
     const otp = inputArray.toString()
-    if (otp.length < 5) {
+    if (otp.length < inputArray.length) {
       alert("Fill in all boxes")
     } else {
       alert("Submitted")
@@ -33,6 +34,7 @@ function App() {
                 inputArray={inputArray}
                 index={index}
                 handleInput={setInputArray}
+
               />
             })
           }
